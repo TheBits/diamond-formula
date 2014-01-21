@@ -6,8 +6,10 @@ diamond:
   service.running:
     - require:
       - pkg: diamond
+      - pkg: python-pysnmp4
       - file: /etc/diamond/diamond.conf
       - file: /etc/diamond/collectors
+      - file: /etc/logrotate.d/diamond
     - watch:
       - file: /etc/diamond/diamond.conf
       - file: /etc/diamond/collectors
@@ -24,3 +26,11 @@ diamond:
   file.recurse:
     - source: salt://diamond/files/collectors
     - clean: True
+
+/etc/logrotate.d/diamond:
+  file.managed:
+    - source: salt://diamond/files/logrotate
+    - mode: 644
+
+python-pysnmp4:
+  pkg.installed
