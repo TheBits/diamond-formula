@@ -26,6 +26,7 @@ diamond:
   file.recurse:
     - source: salt://diamond/files/collectors
     - clean: True
+    - template: jinja
 
 /etc/logrotate.d/diamond:
   file.managed:
