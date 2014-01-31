@@ -27,6 +27,8 @@ diamond:
     - source: salt://diamond/files/collectors
     - clean: True
     - template: jinja
+    - file_mode: 644
+    - dir_mode: 755
 
 /etc/logrotate.d/diamond:
   file.managed:
