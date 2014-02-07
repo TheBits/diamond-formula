@@ -3,7 +3,7 @@
     - source: salt://diamond/files/collector.conf
     - template: jinja
     - context:
-      - name: {{ name }}
+        name: {{ name }}
     - file_mode: 644
     - watch_in:
       - service: diamond
