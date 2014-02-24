@@ -24,6 +24,11 @@ diamond:
     - template: jinja
     - mode: 644
 
+/etc/diamond:
+  file.directory:
+    - dir_mode: 755
+    - file_mode: 644
+
 /etc/diamond/collectors:
   file.directory:
     - dir_mode: 755
