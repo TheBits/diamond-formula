@@ -1,0 +1,5 @@
+diamond:
+  graphite:
+    hosts:
+      - graphite01.example.com
+      - graphite02.example.com
