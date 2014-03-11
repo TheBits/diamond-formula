@@ -3,3 +3,11 @@ diamond:
     hosts:
       - graphite01.example.com
       - graphite02.example.com
+  collectors:
+    CPU:
+      normalize: true
+      percore: false
+    Network:
+    UDP:
+    TCP:
+    Interrupts:
