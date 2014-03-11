@@ -36,7 +36,7 @@ diamond:
     - recurse:
       - mode
 
-{% for name in ['Interrupt', 'Network', 'Process', 'UDP'] %}
+{% for name in salt['pillar.get']('diamond:collectors', ['Interrupt', 'Network', 'UDP', 'TCP']) %}
 {% include 'diamond/collector.sls' %}
 {% endfor %}
 

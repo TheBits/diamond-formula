@@ -1,6 +1,3 @@
-{% set name = "MongoDB" %}
-{% include "diamond/collector.sls" %}
-
 pymongo:
   pkg.installed:
 {% if salt['grains.get']('os') == 'RedHat' %}
