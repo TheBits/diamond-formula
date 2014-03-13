@@ -49,7 +49,7 @@ python-pysnmp4:
 
 diamond-ppa:
   pkgrepo.managed:
-    - ppa: {{ salt['pillar.get']('diamond:diamond-ppa', 'nikicat/diamond' }}
+    - ppa: {{ salt['pillar.get']('diamond:diamond-ppa', 'nikicat/diamond') }}
     - require_in:
       - pkg: diamond
 {% endif %}
