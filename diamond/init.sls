@@ -11,8 +11,6 @@ diamond:
     - enable: true
     - require:
       - pkg: diamond
-      - file: /etc/diamond/diamond.conf
-      - file: /etc/diamond/collectors
       - file: /etc/logrotate.d/diamond
     - watch:
       - file: /etc/diamond/diamond.conf
