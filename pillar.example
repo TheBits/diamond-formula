@@ -1,4 +1,5 @@
 diamond:
+  diamond-ppa: nikicat/diamond
   graphite:
     hosts:
       - graphite01.example.com
