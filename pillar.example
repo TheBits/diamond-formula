@@ -1,5 +1,7 @@
 diamond:
   ppa: nikicat/diamond
+  latest: False
+  version: 3.4.302~precise
   graphite:
     hosts:
       - graphite01.example.com

@@ -1,6 +1,11 @@
 diamond:
   pkg:
+    {% if salt['pillar.get']('diamond:latest', False) %}
+    - latest
+    {% else %}
     - installed
+    - version: {{ salt['pillar.get']('diamond:version', '3.4.302~precise') }}
+    {% endif %}
     {% if grains['os'] == 'RedHat' %}
     - sources:
       - diamond: salt://diamond/files/diamond-3.4.210-1.noarch.rpm
