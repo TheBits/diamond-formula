@@ -1,5 +1,6 @@
 diamond:
   prefix: servers
+  hostname_method: smart
   ppa: nikicat/diamond
   latest: False
   version: 3.4.302~precise
