@@ -1,4 +1,5 @@
 diamond:
+  prefix: servers
   ppa: nikicat/diamond
   latest: False
   version: 3.4.302~precise
