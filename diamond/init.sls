@@ -10,6 +10,8 @@ diamond:
     - sources:
       - diamond: salt://diamond/files/diamond-3.4.210-1.noarch.rpm
     - skip_verify: True
+    {% else %}
+    - version: {{ salt['pillar.get']('diamond:version') }}
     {% endif %}
   service:
     - running
@@ -39,7 +41,7 @@ diamond:
     - recurse:
       - mode
 
-{% for name in salt['pillar.get']('diamond:collectors', ['Interrupt', 'Network', 'UDP', 'TCP']) %}
+{% for name, options in salt['pillar.get']('diamond:collectors', {'Interrupt':None, 'Network':None, 'UDP':None, 'TCP':None}).items() %}
 {% include 'diamond/collector.sls' %}
 {% endfor %}
 
@@ -51,10 +53,4 @@ diamond:
 {% if grains['os'] == 'Ubuntu' %}
 python-pysnmp4:
   pkg.installed
-
-diamond-ppa:
-  pkgrepo.managed:
-    - ppa: {{ salt['pillar.get']('diamond:ppa', 'nikicat/diamond') }}
-    - require_in:
-      - pkg: diamond
 {% endif %}
