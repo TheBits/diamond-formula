@@ -4,9 +4,16 @@ diamond:
   latest: False
   version: 3.4.302~precise
   graphite:
-    hosts:
-      - graphite01.example.com
-      - graphite02.example.com
+    plaintext:
+      hosts:
+        - graphite01.example.com
+        - graphite02.example.com
+      port: 2024
+    pickle:
+      hosts:
+        - graphite03.example.com
+        - graphite04.example.com
+      port: 2025
   collectors:
     CPU:
       normalize: true
